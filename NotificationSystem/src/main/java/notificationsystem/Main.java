@@ -1,4 +1,4 @@
-package org.example;
+package notificationsystem;
 
 import notificationsystem.api.NotificationService;
 import notificationsystem.model.ChannelType;
