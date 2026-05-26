@@ -1,5 +1,6 @@
 package notificationsystem;
 
+import notificationsystem.api.AsyncNotificationService;
 import notificationsystem.api.NotificationService;
 import notificationsystem.model.ChannelType;
 import notificationsystem.model.Notification;
@@ -21,9 +22,11 @@ public class Main {
         //defining notification dispatcher
         NotificationDispatcher notificationDispatcher = new NotificationDispatcher(preferenceService);
 
-        //defining synchronous send notification service
-        NotificationService notificationService = new NotificationService(notificationDispatcher);
+//        //defining synchronous send notification service
+//        NotificationService notificationService = new SyncNotificationService(notificationDispatcher);
 
+        //defining asynchronous send notification service
+        NotificationService notificationService = new AsyncNotificationService(notificationDispatcher);
         //sending notification
         notificationService.sendNotification(new Notification("user1", "Your order has been shipped!"));
 
